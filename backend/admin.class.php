@@ -42,6 +42,17 @@ class pessoa {
                     $itens[] = array("id" => $pessoa['id'], "nome" => $pessoa['nome'], "salario" => $pessoa['salario']);
                 }
                 
+                usort($itens, function($a, $b) {
+                    $a['salario'] = str_replace('R$ ', '', $a['salario']);
+                    $a['salario'] = str_replace('.', '', $a['salario']);
+                    $a['salario'] = str_replace(',', '.', $a['salario']);
+                    $b['salario'] = str_replace('R$ ', '', $b['salario']);
+                    $b['salario'] = str_replace('.', '', $b['salario']);
+                    $b['salario'] = str_replace(',', '.', $b['salario']);
+                    return $a['salario'] <= $b['salario'];
+                    //return $a['nome'] >= $b['nome'];
+                });
+
                 echo json_encode($itens);
 
             } else {
@@ -77,7 +88,18 @@ class pessoa {
             foreach($result as $pessoa){
                 $itens[] = array("id" => $pessoa['id'], "nome" => $pessoa['nome'], "salario" => $pessoa['salario']);
             }
-            
+
+            usort($itens, function($a, $b) {
+                $a['salario'] = str_replace('R$ ', '', $a['salario']);
+                $a['salario'] = str_replace('.', '', $a['salario']);
+                $a['salario'] = str_replace(',', '.', $a['salario']);
+                $b['salario'] = str_replace('R$ ', '', $b['salario']);
+                $b['salario'] = str_replace('.', '', $b['salario']);
+                $b['salario'] = str_replace(',', '.', $b['salario']);
+                return $a['salario'] <= $b['salario']; //ORDENAR SALARIO > PARA <
+                //return $a['nome'] >= $b['nome']; // ORDENAR NOME POR ORDEM ALFABETICA
+            });
+
             echo json_encode($itens);
             
             $database->fechaConexao();
@@ -110,6 +132,17 @@ class pessoa {
 
                 $itens[] = array("id" => (int) $id, "nome" => $nome, "salario" => $salario);
             }
+
+            usort($itens, function($a, $b) {
+                $a['salario'] = str_replace('R$ ', '', $a['salario']);
+                $a['salario'] = str_replace('.', '', $a['salario']);
+                $a['salario'] = str_replace(',', '.', $a['salario']);
+                $b['salario'] = str_replace('R$ ', '', $b['salario']);
+                $b['salario'] = str_replace('.', '', $b['salario']);
+                $b['salario'] = str_replace(',', '.', $b['salario']);
+                return $a['salario'] <= $b['salario'];
+                //return $a['nome'] >= $b['nome'];
+            });
 
             echo json_encode($itens);
             
@@ -155,6 +188,17 @@ class pessoa {
                     $itens[] = array("id" => $pessoa['id'], "nome" => $pessoa['nome'], "salario" => $pessoa['salario']);
                 }
                 
+                usort($itens, function($a, $b) {
+                    $a['salario'] = str_replace('R$ ', '', $a['salario']);
+                    $a['salario'] = str_replace('.', '', $a['salario']);
+                    $a['salario'] = str_replace(',', '.', $a['salario']);
+                    $b['salario'] = str_replace('R$ ', '', $b['salario']);
+                    $b['salario'] = str_replace('.', '', $b['salario']);
+                    $b['salario'] = str_replace(',', '.', $b['salario']);
+                    return $a['salario'] <= $b['salario'];
+                    //return $a['nome'] >= $b['nome'];
+                });
+
                 echo json_encode($itens);
 
             } else {
@@ -197,8 +241,19 @@ class pessoa {
                     $itens[] = array("id" => $pessoa['id'], "nome" => $pessoa['nome'], "salario" => $pessoa['salario']);
                 }
                 
+                usort($itens, function($a, $b) {
+                    $a['salario'] = str_replace('R$ ', '', $a['salario']);
+                    $a['salario'] = str_replace('.', '', $a['salario']);
+                    $a['salario'] = str_replace(',', '.', $a['salario']);
+                    $b['salario'] = str_replace('R$ ', '', $b['salario']);
+                    $b['salario'] = str_replace('.', '', $b['salario']);
+                    $b['salario'] = str_replace(',', '.', $b['salario']);
+                    return $a['salario'] <= $b['salario'];
+                    //return $a['nome'] >= $b['nome'];
+                });
+
                 echo json_encode($itens);
-                
+
             } else {
                 echo json_encode("Houve um erro ao excluir o registro");
             }
