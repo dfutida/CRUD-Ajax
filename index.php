@@ -13,45 +13,21 @@
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css" />
 
-<script>
-    var oldxpos;
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 
-    function getPos(mouseEvent) {
-        
-        var xpos;
-        
-        if (mouseEvent) {
-            xpos = mouseEvent.screenX;
-        } else {
-            xpos = window.event.screenX;
-        }
-
-        if (xpos == 0 && xpos != oldxpos) {
-            document.getElementById("togglemenu").click();
-            oldxpos = xpos;
-        } else {
-            oldxpos = xpos;
-        }
-    }
-
-    $(window).load(function() {
-        document.getElementById("processando").style.display = "inline";
-    })
-</script>
 </head>
 
-<body
-onmousemove = getPos(event);
-onSubmit='document.getElementById("processando").style.display="inline";'
-onbeforeunload='document.getElementById("processando").style.display="inline";'
->
+<body class="bg-dark text-light">
 
-<div id='processando' style='display:none;' width='100%' height='100%'><br><br><br><br><br><br><br><br><br><br><br><br><p align='center'><font color='#60D060'><b>AGUARDE <img src='images/loading-bars.svg' width='40'> PROCESSANDO</b></font></p><br><br><br><br><br><br><br><br><br><br><br><br>
+<div id='processando' style='display:none;' width='100%' height='100%'><br><br><br><br><br><br><br><br><br><br><br><br><p align='center'><font color='#60D060'><b>AGUARDE  <img src='images/loading-bars.svg' width='40'>  PROCESSANDO</b></font></p><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 
-<div class="centralizar">
+<div class="d-flex align-items-center justify-content-center h-100">
 <form action="index.php" id="formajax" method="POST">
-<table class="xtable">
+<table class="table">
+    <caption style="caption-side:top; text-align:center;" class="text-light">Cadastro de pessoas</caption>
     <tr>
         <td>Nome:</td>
         <td><input type="text" id="nome" name="nome" minlength="3" required></td>
@@ -60,17 +36,17 @@ onbeforeunload='document.getElementById("processando").style.display="inline";'
         <td><input type="text" id="salario" name="salario" required></td>
     </tr><tr>
         <td><input type="hidden" id="id-pessoa"></td>
-        <td style="text-align:right;"><input type="button" id="limpar" value="Limpar">&nbsp;&nbsp;<input type="submit" id="salvar" value="Salvar"></td>
+        <td style="text-align:right;"><input type="button" class="btn btn-light btn-sm" id="limpar" value="Limpar">&nbsp;&nbsp;<input type="submit" class="btn btn-light btn-sm" id="salvar" value="Salvar"></td>
     </tr>
 </table>
 </form>
 </div>
-<div class="centralizar">
-<table class="vtable">
+<div class="d-flex align-items-center justify-content-center h-100">
+<table class="table table-hover table-striped table-dark">
     <tr>
-        <td>ID</td>
+        <td class="text-center">#</td>
         <td>Nome</td>
-        <td>Salario</td>
+        <td>Salário</td>
         <td>Controle</td>
     </tr>
     <tbody id="mytr"></tbody>
