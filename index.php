@@ -13,9 +13,42 @@
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css" />
 
+<script>
+    var oldxpos;
+
+    function getPos(mouseEvent) {
+        
+        var xpos;
+        
+        if (mouseEvent) {
+            xpos = mouseEvent.screenX;
+        } else {
+            xpos = window.event.screenX;
+        }
+
+        if (xpos == 0 && xpos != oldxpos) {
+            document.getElementById("togglemenu").click();
+            oldxpos = xpos;
+        } else {
+            oldxpos = xpos;
+        }
+    }
+
+    $(window).load(function() {
+        document.getElementById("processando").style.display = "inline";
+    })
+</script>
 </head>
 
-<body>
+<body
+onmousemove = getPos(event);
+onSubmit='document.getElementById("processando").style.display="inline";'
+onbeforeunload='document.getElementById("processando").style.display="inline";'
+>
+
+<div id='processando' style='display:none;' width='100%' height='100%'><br><br><br><br><br><br><br><br><br><br><br><br><p align='center'><font color='#60D060'><b>AGUARDE <img src='images/loading-bars.svg' width='40'> PROCESSANDO</b></font></p><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
 <div class="centralizar">
 <form action="index.php" id="formajax" method="POST">
 <table class="xtable">
