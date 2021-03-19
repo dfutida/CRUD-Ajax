@@ -24,24 +24,36 @@
 <div id='processando' style='display:none;' width='100%' height='100%'><br><br><br><br><br><br><br><br><br><br><br><br><p align='center'><font color='#60D060'><b>AGUARDE  <img src='images/loading-bars.svg' width='40'>  PROCESSANDO</b></font></p><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 
-<div class="d-flex align-items-center justify-content-center h-100">
-<form action="index.php" id="formajax" method="POST">
-<table class="table">
-    <caption style="caption-side:top; text-align:center;" class="text-light">Cadastro de funcionários</caption>
-    <tr>
-        <td>Nome:</td>
-        <td><input type="text" id="nome" name="nome" minlength="3" required></td>
-    </tr><tr>
-        <td>Salário:</td>
-        <td><input type="text" id="salario" name="salario" required></td>
-    </tr><tr>
-        <td><input type="hidden" id="id-pessoa"></td>
-        <td style="text-align:right;"><input type="button" class="btn btn-light btn-sm" id="limpar" value="Limpar">&nbsp;&nbsp;<input type="submit" class="btn btn-light btn-sm" id="salvar" value="Salvar"></td>
-    </tr>
-</table>
-</form>
+<div class="pos-f-t fixed-top">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+    <form action="index.php" id="formajax" method="POST">
+    <table class="table d-flex align-items-center justify-content-center">
+        <tr>
+            <td colspan="2" class="text-center">Cadastro de funcionários</td>
+        </tr>
+        <tr>
+            <td>Nome:</td>
+            <td><input type="text" id="nome" name="nome" minlength="3" required></td>
+        </tr><tr>
+            <td>Salário:</td>
+            <td><input type="text" id="salario" name="salario" required></td>
+        </tr><tr>
+            <td><input type="hidden" id="id-pessoa"></td>
+            <td style="text-align:right;"><input type="button" class="btn btn-light btn-sm" id="limpar" value="Limpar">&nbsp;&nbsp;<input type="submit" class="btn btn-light btn-sm" id="salvar" value="Salvar"></td>
+        </tr>
+    </table>
+    </form>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler bg-danger" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
 </div>
-<div class="d-flex align-items-center justify-content-center h-100">
+
+<div class="d-flex align-items-center justify-content-center">
 <table class="table table-hover table-striped table-dark">
     <tr>
         <td class="text-center">#</td>
