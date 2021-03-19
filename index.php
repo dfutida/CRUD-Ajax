@@ -27,7 +27,7 @@
 <div class="d-flex align-items-center justify-content-center h-100">
 <form action="index.php" id="formajax" method="POST">
 <table class="table">
-    <caption style="caption-side:top; text-align:center;" class="text-light">Cadastro de pessoas</caption>
+    <caption style="caption-side:top; text-align:center;" class="text-light">Cadastro de funcionários</caption>
     <tr>
         <td>Nome:</td>
         <td><input type="text" id="nome" name="nome" minlength="3" required></td>

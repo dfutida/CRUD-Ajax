@@ -45,7 +45,7 @@ $(document).ready(function() {
                     $("#mytr").append("<tr><td class='text-center'>"+data[i]["id"]+"</td><td>"+data[i]["nome"]+"</td><td>"+data[i]["salario"]+"</td><td><input type='button' id='btn-edita' data-id="+data[i]["id"]+" class='btn btn-light btn-sm' value='Editar'>&nbsp;&nbsp;<input type='button' id='btn-delete' del-id="+data[i]["id"]+" del-nome='"+data[i]["nome"]+"' class='btn btn-light btn-sm' value='Excluir'></td></tr>");
                 }
                 $('#formajax')[0].reset();
-                
+                document.getElementById("nome").focus();
             }).fail(function(xhr, textStatus, error) {
                 document.getElementById("processando").style.display = "none";
                 console.log(xhr.responseText);
@@ -77,6 +77,7 @@ $(document).ready(function() {
                 }
                 $('#formajax')[0].reset();
                 $("#id-pessoa").val('');
+                document.getElementById("nome").focus();
             }).fail(function(xhr, textStatus, error) {
                 document.getElementById("processando").style.display = "none";
                 console.log(xhr.responseText);
@@ -101,6 +102,7 @@ $(document).ready(function() {
             $("#mytr").append("<tr><td class='text-center'>"+data[i]["id"]+"</td><td>"+data[i]["nome"]+"</td><td>"+data[i]["salario"]+"</td><td><input type='button' id='btn-edita' data-id="+data[i]["id"]+" class='btn btn-light btn-sm' value='Editar'>&nbsp;&nbsp;<input type='button' id='btn-delete' del-id="+data[i]["id"]+" del-nome='"+data[i]["nome"]+"' class='btn btn-light btn-sm' value='Excluir'></td></tr>");
         }
         $('#formajax')[0].reset();
+        document.getElementById("nome").focus();
     }).fail(function(xhr, textStatus, error){
         document.getElementById("processando").style.display = "none";
         console.log(xhr.responseText);
@@ -136,7 +138,6 @@ $(document).ready(function() {
                 $("#salario").val(data[i]["salario"]);
             }
             document.getElementById("nome").focus();
-
         }).fail(function(xhr, textStatus, error) {
             document.getElementById("processando").style.display = "none";
             console.log(xhr.responseText);
@@ -176,6 +177,7 @@ $(document).ready(function() {
                     $("#mytr").append("<tr><td class='text-center'>"+data[i]["id"]+"</td><td>"+data[i]["nome"]+"</td><td>"+data[i]["salario"]+"</td><td><input type='button' id='btn-edita' data-id="+data[i]["id"]+" class='btn btn-light btn-sm' value='Editar'>&nbsp;&nbsp;<input type='button' id='btn-delete' del-id="+data[i]["id"]+" del-nome='"+data[i]["nome"]+"' class='btn btn-light btn-sm' value='Excluir'></td></tr>");
                 }
                 $('#formajax')[0].reset();
+                document.getElementById("nome").focus();
             }).fail(function(xhr, textStatus, error){
                 document.getElementById("processando").style.display = "none";
                 console.log(xhr.responseText);
@@ -191,6 +193,7 @@ $(document).ready(function() {
 
         $('#formajax')[0].reset();
         $("#id-pessoa").val('');
+        document.getElementById("nome").focus();
     });
 
 });
