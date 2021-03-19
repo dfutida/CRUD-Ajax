@@ -32,7 +32,7 @@
         <td>Nome:</td>
         <td><input type="text" id="nome" name="nome" minlength="3" required></td>
     </tr><tr>
-        <td>Salario:</td>
+        <td>Salário:</td>
         <td><input type="text" id="salario" name="salario" required></td>
     </tr><tr>
         <td><input type="hidden" id="id-pessoa"></td>
