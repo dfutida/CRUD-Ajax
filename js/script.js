@@ -27,10 +27,12 @@ $(document).ready(function() {
                 url:'insere.php',
                 method:'POST',
                 dataType: "json",
-                data:formData,
+                data:formData
+                /*
                 beforeSend: function(){
                     document.getElementById("processando").style.display = "inline";
                 }
+                */
             }).done(function(data){
                 /*
                 jQuery.each(data, function(index, item) {
@@ -61,10 +63,12 @@ $(document).ready(function() {
                     id: idPessoa,
                     nome: $("#nome").val(),
                     salario: $("#salario").val()
-                },
+                }
+                /*
                 beforeSend: function(){
                     document.getElementById("processando").style.display = "inline";
                 }
+                */
             }).done(function(data){
                 document.getElementById("processando").style.display = "none";
                 $("#mytr").empty();
@@ -117,10 +121,12 @@ $(document).ready(function() {
             dataType: "json",
             data: {
                 id: id
-            },
+            }
+            /*
             beforeSend: function(){
                 document.getElementById("processando").style.display = "inline";
             }
+            */
         }).done(function(data) {
             //console.log(data);
             document.getElementById("processando").style.display = "none";
@@ -157,10 +163,12 @@ $(document).ready(function() {
                 dataType: "json",
                 data: {
                     id: id
-                },
+                }
+                /*
                 beforeSend: function(){
                     document.getElementById("processando").style.display = "inline";
                 }
+                */
             }).done(function(data) {
                 document.getElementById("processando").style.display = "none";
                 $("#mytr").empty();
