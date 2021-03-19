@@ -47,7 +47,7 @@
         </div>
     </div>
   <nav class="navbar navbar-dark bg-dark">
-    <button class="navbar-toggler bg-danger" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Alterna navegação">
+    <button class="navbar-toggler bg-danger" id="btn-navbar" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
     </button>
   </nav>
