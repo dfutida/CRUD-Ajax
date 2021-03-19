@@ -25,27 +25,27 @@
 </div>
 
 <div class="pos-f-t fixed-top">
-  <div class="collapse" id="navbarToggleExternalContent">
-    <div class="bg-dark p-4">
-    <form action="index.php" id="formajax" method="POST">
-    <table class="table d-flex align-items-center justify-content-center">
-        <tr>
-            <td colspan="2" class="text-center">Cadastro de funcionários</td>
-        </tr>
-        <tr>
-            <td>Nome:</td>
-            <td><input type="text" id="nome" name="nome" minlength="3" required></td>
-        </tr><tr>
-            <td>Salário:</td>
-            <td><input type="text" id="salario" name="salario" required></td>
-        </tr><tr>
-            <td><input type="hidden" id="id-pessoa"></td>
-            <td style="text-align:right;"><input type="button" class="btn btn-light btn-sm" id="limpar" value="Limpar">&nbsp;&nbsp;<input type="submit" class="btn btn-light btn-sm" id="salvar" value="Salvar"></td>
-        </tr>
-    </table>
-    </form>
+    <div class="collapse" id="navbarToggleExternalContent">
+        <div class="bg-dark p-4">
+        <form action="index.php" id="formajax" method="POST">
+            <table class="table d-flex align-items-center justify-content-center">
+                <tr>
+                    <td colspan="2" class="text-center">Cadastro de funcionários</td>
+                </tr>
+                <tr>
+                    <td>Nome:</td>
+                    <td><input type="text" id="nome" name="nome" minlength="3" required></td>
+                </tr><tr>
+                    <td>Salário:</td>
+                    <td><input type="text" id="salario" name="salario" required></td>
+                </tr><tr>
+                    <td><input type="hidden" id="id-pessoa"></td>
+                    <td style="text-align:right;"><input type="button" class="btn btn-light btn-sm" id="limpar" value="Limpar">&nbsp;&nbsp;<input type="submit" class="btn btn-light btn-sm" id="salvar" value="Salvar"></td>
+                </tr>
+            </table>
+        </form>
+        </div>
     </div>
-  </div>
   <nav class="navbar navbar-dark bg-dark">
     <button class="navbar-toggler bg-danger" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Alterna navegação">
       <span class="navbar-toggler-icon"></span>
@@ -53,7 +53,6 @@
   </nav>
 </div>
 
-<div class="d-flex align-items-center justify-content-center">
 <table class="table table-hover table-striped table-dark">
     <tr>
         <td class="text-center">#</td>
@@ -63,7 +62,6 @@
     </tr>
     <tbody id="mytr"></tbody>
 </table>
-</div>
 
 </body>
 </html>
