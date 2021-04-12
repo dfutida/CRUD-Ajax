@@ -1,6 +1,6 @@
 <?php
 
-    include "backend/admin.class.php";
+    include "../backend/admin.class.php";
 
     $id = $_POST["id"];
     $nome = $_POST["nome"];

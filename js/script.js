@@ -24,7 +24,7 @@ $(document).ready(function() {
         if(typeof(idPessoa) == 'undefined' || idPessoa == null || idPessoa == '') {
 
             $.ajax({
-                url:'insere.php',
+                url:'frontend/insere.php',
                 method:'POST',
                 dataType: "json",
                 data:formData
@@ -56,7 +56,7 @@ $(document).ready(function() {
         } else {
                 
             $.ajax({
-                url:'atualiza.php',
+                url:'frontend/atualiza.php',
                 method:'POST',
                 dataType: "json",
                 data:{
@@ -88,7 +88,7 @@ $(document).ready(function() {
     });
 
     $.ajax({
-        url: "seleciona.php",
+        url: "frontend/seleciona.php",
         method: "POST",
         dataType: "json",
         data: {},
@@ -118,7 +118,7 @@ $(document).ready(function() {
         var id = $(this).attr("data-id");
 
         $.ajax({
-            url: "edita.php",
+            url: "frontend/edita.php",
             method: "POST",
             dataType: "json",
             data: {
@@ -159,7 +159,7 @@ $(document).ready(function() {
         if(x) {
 
             $.ajax({
-                url: "delete.php",
+                url: "frontend/delete.php",
                 method: "POST",
                 dataType: "json",
                 data: {
