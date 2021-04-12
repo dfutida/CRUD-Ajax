@@ -2,21 +2,21 @@ $(document).ready(function() {
 
     //var itens = [];
 
-    $("#salario").maskMoney({
+    $('#salario').maskMoney({
       prefix: 'R$ ',
       allowNegative: true,
       thousands: '.',
       decimal: ','
    });
 
-   $("#formajax").submit(function(e){
+   $('#formajax').submit(function(e){
         
         e.preventDefault();
-        var idPessoa = $("#id-pessoa").val();
+        var idPessoa = $('#id-pessoa').val();
         
         var formData = {
-            'nome' : $("#nome").val(),
-            'salario' : $("#salario").val()
+            'nome' : $('#nome').val(),
+            'salario' : $('#salario').val()
         };
 
         //itens.push(formData);
@@ -26,11 +26,11 @@ $(document).ready(function() {
             $.ajax({
                 url:'frontend/insere.php',
                 method:'POST',
-                dataType: "json",
+                dataType: 'json',
                 data:formData
                 /*
                 beforeSend: function(){
-                    document.getElementById("processando").style.display = "inline";
+                    document.getElementById('processando').style.display = 'inline';
                 }
                 */
             }).done(function(data){
@@ -39,15 +39,15 @@ $(document).ready(function() {
                     $("#mytr").append("<tr><td>"+item.id+"</td><td>"+item.nome+"</td><td>"+item.salario+"</td></tr>");
                 });
                 */
-                document.getElementById("processando").style.display = "none";
-                $("#mytr").empty();
+                document.getElementById('processando').style.display = 'none';
+                $('#mytr').empty();
                 for (var i in data) {
-                    $("#mytr").append("<tr><td class='text-center'>"+data[i]["id"]+"</td><td>"+data[i]["nome"]+"</td><td>"+data[i]["salario"]+"</td><td><input type='button' id='btn-edita' data-id="+data[i]["id"]+" class='btn btn-light btn-sm' value='Editar'>&nbsp;&nbsp;<input type='button' id='btn-delete' del-id="+data[i]["id"]+" del-nome='"+data[i]["nome"]+"' class='btn btn-light btn-sm' value='Excluir'></td></tr>");
+                    $('#mytr').append("<tr><td class='text-center'>"+data[i]["id"]+"</td><td>"+data[i]["nome"]+"</td><td>"+data[i]["salario"]+"</td><td><input type='button' id='btn-edita' data-id="+data[i]["id"]+" class='btn btn-light btn-sm' value='Editar'>&nbsp;&nbsp;<input type='button' id='btn-delete' del-id="+data[i]["id"]+" del-nome='"+data[i]["nome"]+"' class='btn btn-light btn-sm' value='Excluir'></td></tr>");
                 }
                 $('#formajax')[0].reset();
-                document.getElementById("nome").focus();
+                document.getElementById('nome').focus();
             }).fail(function(xhr, textStatus, error) {
-                document.getElementById("processando").style.display = "none";
+                document.getElementById('processando').style.display = 'none';
                 console.log(xhr.responseText);
                 console.log('Erro: ' + textStatus);
                 console.log('ErroText: ' + error);
@@ -58,11 +58,11 @@ $(document).ready(function() {
             $.ajax({
                 url:'frontend/atualiza.php',
                 method:'POST',
-                dataType: "json",
+                dataType: 'json',
                 data:{
                     id: idPessoa,
-                    nome: $("#nome").val(),
-                    salario: $("#salario").val()
+                    nome: $('#nome').val(),
+                    salario: $('#salario').val()
                 }
                 /*
                 beforeSend: function(){
@@ -70,16 +70,16 @@ $(document).ready(function() {
                 }
                 */
             }).done(function(data){
-                document.getElementById("processando").style.display = "none";
-                $("#mytr").empty();
+                document.getElementById('processando').style.display = 'none';
+                $('#mytr').empty();
                 for (var i in data) {
-                    $("#mytr").append("<tr><td class='text-center'>"+data[i]["id"]+"</td><td>"+data[i]["nome"]+"</td><td>"+data[i]["salario"]+"</td><td><input type='button' id='btn-edita' data-id="+data[i]["id"]+" class='btn btn-light btn-sm' value='Editar'>&nbsp;&nbsp;<input type='button' id='btn-delete' del-id="+data[i]["id"]+" del-nome='"+data[i]["nome"]+"' class='btn btn-light btn-sm' value='Excluir'></td></tr>");
+                    $('#mytr').append("<tr><td class='text-center'>"+data[i]["id"]+"</td><td>"+data[i]["nome"]+"</td><td>"+data[i]["salario"]+"</td><td><input type='button' id='btn-edita' data-id="+data[i]["id"]+" class='btn btn-light btn-sm' value='Editar'>&nbsp;&nbsp;<input type='button' id='btn-delete' del-id="+data[i]["id"]+" del-nome='"+data[i]["nome"]+"' class='btn btn-light btn-sm' value='Excluir'></td></tr>");
                 }
                 $('#formajax')[0].reset();
-                $("#id-pessoa").val('');
-                document.getElementById("nome").focus();
+                $('#id-pessoa').val('');
+                document.getElementById('nome').focus();
             }).fail(function(xhr, textStatus, error) {
-                document.getElementById("processando").style.display = "none";
+                document.getElementById('processando').style.display = 'none';
                 console.log(xhr.responseText);
                 console.log('Erro: ' + textStatus);
                 console.log('ErroText: ' + error);
@@ -88,39 +88,39 @@ $(document).ready(function() {
     });
 
     $.ajax({
-        url: "frontend/seleciona.php",
-        method: "POST",
-        dataType: "json",
+        url: 'frontend/seleciona.php',
+        method: 'POST',
+        dataType: 'json',
         data: {},
         beforeSend: function(){
-            document.getElementById("processando").style.display = "inline";
+            document.getElementById('processando').style.display = 'inline';
         }
     }).done(function(data){
-        document.getElementById("processando").style.display = "none";
-        $("#mytr").empty();
+        document.getElementById('processando').style.display = 'none';
+        $('#mytr').empty();
         for (var i in data) {
-            $("#mytr").append("<tr><td class='text-center'>"+data[i]["id"]+"</td><td>"+data[i]["nome"]+"</td><td>"+data[i]["salario"]+"</td><td><input type='button' id='btn-edita' data-id="+data[i]["id"]+" class='btn btn-light btn-sm' value='Editar'>&nbsp;&nbsp;<input type='button' id='btn-delete' del-id="+data[i]["id"]+" del-nome='"+data[i]["nome"]+"' class='btn btn-light btn-sm' value='Excluir'></td></tr>");
+            $('#mytr').append("<tr><td class='text-center'>"+data[i]["id"]+"</td><td>"+data[i]["nome"]+"</td><td>"+data[i]["salario"]+"</td><td><input type='button' id='btn-edita' data-id="+data[i]["id"]+" class='btn btn-light btn-sm' value='Editar'>&nbsp;&nbsp;<input type='button' id='btn-delete' del-id="+data[i]["id"]+" del-nome='"+data[i]["nome"]+"' class='btn btn-light btn-sm' value='Excluir'></td></tr>");
         }
         $('#formajax')[0].reset();
-        document.getElementById("nome").focus();
+        document.getElementById('nome').focus();
     }).fail(function(xhr, textStatus, error){
-        document.getElementById("processando").style.display = "none";
+        document.getElementById('processando').style.display = 'none';
         console.log(xhr.responseText);
         console.log('Erro: ' + textStatus);
         console.log('ErroText: ' + error);
     });
 
-    $(document).on("click","#btn-edita", function(e) {
+    $(document).on('click','#btn-edita', function(e) {
 
         e.preventDefault();
 
         //var id = $('#data-id').val();
-        var id = $(this).attr("data-id");
+        var id = $(this).attr('data-id');
 
         $.ajax({
-            url: "frontend/edita.php",
-            method: "POST",
-            dataType: "json",
+            url: 'frontend/edita.php',
+            method: 'POST',
+            dataType: 'json',
             data: {
                 id: id
             }
@@ -131,37 +131,37 @@ $(document).ready(function() {
             */
         }).done(function(data) {
             //console.log(data);
-            document.getElementById("processando").style.display = "none";
+            document.getElementById('processando').style.display = 'none';
             for (var i in data) {
-                $("#id-pessoa").val(data[i]["id"]);
-                $("#nome").val(data[i]["nome"]);
-                $("#salario").val(data[i]["salario"]);
+                $('#id-pessoa').val(data[i]['id']);
+                $('#nome').val(data[i]['nome']);
+                $('#salario').val(data[i]['salario']);
             }
-            document.getElementById("nome").focus();
+            document.getElementById('nome').focus();
         }).fail(function(xhr, textStatus, error) {
-            document.getElementById("processando").style.display = "none";
+            document.getElementById('processando').style.display = 'none';
             console.log(xhr.responseText);
             console.log('Erro: ' + textStatus);
             console.log('ErroText: ' + error);
         });
     });
 
-    $(document).on("click","#btn-delete", function(e) {
+    $(document).on('click','#btn-delete', function(e) {
 
         e.preventDefault();
 
         //var id = $('#data-id').val();
-        var id = $(this).attr("del-id");
-        var nome = $(this).attr("del-nome");
+        var id = $(this).attr('del-id');
+        var nome = $(this).attr('del-nome');
 
         var x = confirm('Você tem certeza que deseja excluir '+nome+'?');
 
         if(x) {
 
             $.ajax({
-                url: "frontend/delete.php",
-                method: "POST",
-                dataType: "json",
+                url: 'frontend/delete.php',
+                method: 'POST',
+                dataType: 'json',
                 data: {
                     id: id
                 }
@@ -171,15 +171,15 @@ $(document).ready(function() {
                 }
                 */
             }).done(function(data) {
-                document.getElementById("processando").style.display = "none";
-                $("#mytr").empty();
+                document.getElementById('processando').style.display = 'none';
+                $('#mytr').empty();
                 for (var i in data) {
-                    $("#mytr").append("<tr><td class='text-center'>"+data[i]["id"]+"</td><td>"+data[i]["nome"]+"</td><td>"+data[i]["salario"]+"</td><td><input type='button' id='btn-edita' data-id="+data[i]["id"]+" class='btn btn-light btn-sm' value='Editar'>&nbsp;&nbsp;<input type='button' id='btn-delete' del-id="+data[i]["id"]+" del-nome='"+data[i]["nome"]+"' class='btn btn-light btn-sm' value='Excluir'></td></tr>");
+                    $('#mytr').append("<tr><td class='text-center'>"+data[i]["id"]+"</td><td>"+data[i]["nome"]+"</td><td>"+data[i]["salario"]+"</td><td><input type='button' id='btn-edita' data-id="+data[i]["id"]+" class='btn btn-light btn-sm' value='Editar'>&nbsp;&nbsp;<input type='button' id='btn-delete' del-id="+data[i]["id"]+" del-nome='"+data[i]["nome"]+"' class='btn btn-light btn-sm' value='Excluir'></td></tr>");
                 }
                 $('#formajax')[0].reset();
-                document.getElementById("nome").focus();
+                document.getElementById('nome').focus();
             }).fail(function(xhr, textStatus, error){
-                document.getElementById("processando").style.display = "none";
+                document.getElementById('processando').style.display = 'none';
                 console.log(xhr.responseText);
                 console.log('Erro: ' + textStatus);
                 console.log('ErroText: ' + error);
@@ -187,28 +187,28 @@ $(document).ready(function() {
         }
     });
 
-    $(document).on("click","#limpar", function(e) {
+    $(document).on('click','#limpar', function(e) {
 
         e.preventDefault();
 
         $('#formajax')[0].reset();
-        $("#id-pessoa").val('');
-        document.getElementById("nome").focus();
+        $('#id-pessoa').val('');
+        document.getElementById('nome').focus();
     });
 
-    $(document).on("click","#btn-navbar", function(e) {
+    $(document).on('click','#btn-navbar', function(e) {
         e.preventDefault();
-        document.getElementById("nome").focus();
+        document.getElementById('nome').focus();
     });
 
     // AJUSTA A TABELA/PAGINA DE FUNDO A NAVBAR TOP FIXA
-    $(".navbar-toggler-icon").add(window).on('resize load click',function(e) {
+    $('.navbar-toggler-icon').add(window).on('resize load click',function(e) {
         espaco = 5; // ajuste de espaçamento à partir barra, em pixels
-        if(e.type != "click") {
-            $("body").css("padding-top",($("div.fixed-top").height()+espaco)+"px");
+        if(e.type != 'click') {
+            $('body').css('padding-top',($('div.fixed-top').height()+espaco)+'px');
         } else {
             setTimeout(function(){
-                $("body").animate({ 'padding-top': ($("div.fixed-top").height()+espaco)+'px' }, 50);
+                $('body').animate({ 'padding-top': ($('div.fixed-top').height()+espaco)+'px' }, 50);
             },500);
         }
     });
