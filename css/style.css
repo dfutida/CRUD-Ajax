@@ -1,29 +1,3 @@
-body {
-    padding-top: 5px;
-}
-@media (min-width: 768px) {
-body {
-    padding-top: 5px;
-    }
-}
-.centralizar {
-    /* border: 3px solid red; */
-    display: flex;
-    justify-content: center;
-}
-.vtable {
-    font-family: Arial, Verdana, "Times New Roman";
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 10px;
-    border-spacing: 10px;
-}
-.xtable {
-    font-family: Arial, Verdana, "Times New Roman";
-    padding: 10px;
-    border-spacing: 10px;
-}
-
 .table-hover tbody tr:hover td {
-    background: #000000;
+    background-color: #000000;
 }
